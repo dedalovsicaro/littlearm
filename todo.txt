@@ -1,3 +1,6 @@
+git commit  -a
+git push origin master
+
 montar brazo robotico little arms
 * https://www.instructables.com/id/Servo-Motor-Control-With-Raspberry-Pi/
 
