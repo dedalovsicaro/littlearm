@@ -1,0 +1,10 @@
+montar brazo robotico little arms
+* https://www.instructables.com/id/Servo-Motor-Control-With-Raspberry-Pi/
+
+probar osciloscopio
+libro monk
+autoguide telescope
+
+nextcloud en server, independencia
+
+si recuperas impresora 3d, littlearms web mola mucho
