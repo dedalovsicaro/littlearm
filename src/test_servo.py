@@ -4,22 +4,23 @@ import time
 
 
 def SetAngle(angle):
-	duty = angle / 18 + 2
+	duty = float(angle)/180 * 10 + 2
 	print "duty: "+str(duty)  # Only on stdout
-	GPIO.output(05, True)
+	GPIO.output(07, True)
 	p.ChangeDutyCycle(duty)
 	time.sleep(1)	
 	p.ChangeDutyCycle(0)
-	GPIO.output(05, False)
+	GPIO.output(07, False)
 
-servoPIN = 5
+servoPIN = 7
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(servoPIN, GPIO.OUT)
 
 p = GPIO.PWM(servoPIN, 50) # GPIO 17 for PWM with 50Hz
 p.start(2.5) # Initialization
 
-SetAngle(0) 
+SetAngle(175) 
+SetAngle(5) 
 p.stop()
 GPIO.cleanup()
 

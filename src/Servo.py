@@ -1,4 +1,7 @@
 # Python Module Servo
+#180  -  2
+#angle - duty
+
 import RPi.GPIO as GPIO  
 import time
 
@@ -22,8 +25,12 @@ class Servo:
 
 	def SetAngle(self, angle):
 		self.prepare()
-		print("Hello my name is " + self.name)
-		duty = angle / 18 + 2
+		
+		print("Hello my name is " + self.name + " setting angle " + str(angle))
+		
+		
+		duty = float(angle)/180 * 10 + 2
+
 		print "duty: "+str(duty)  # Only on stdout
 		GPIO.output(self.servoPIN, True)
 		self.pwm.ChangeDutyCycle(duty)
