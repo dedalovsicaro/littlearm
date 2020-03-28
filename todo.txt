@@ -3,6 +3,8 @@ git push origin master
 
 montar brazo robotico little arms
 * https://www.instructables.com/id/Servo-Motor-Control-With-Raspberry-Pi/
+servos on raspberry
+* https://www.mbtechworks.com/projects/raspberry-pi-pwm.html
 
 probar osciloscopio
 libro monk

@@ -11,33 +11,35 @@ try:
 
 	servo_codo = Servo("codo", 7)
 	servo_pinza = Servo("pinza", 8)
-
-	servo_pinza.SetAngle(40)
-	servo_pinza.SetAngle(85) # cerrado
+	
+	servo_pinza.rotate(40)
 	time.sleep(2)
-
-	'''
-	servo_base.SetAngle(30)
+	servo_pinza.rotate(85) # cerrado
 	time.sleep(2)
-	servo_base.SetAngle(178)
+	
+	
+	servo_base.rotate(178)
+	time.sleep(2)
+	servo_base.rotate(5)
 	time.sleep(2)	
-	servo_base.SetAngle(130)
+	#servo_base.rotate(130)
 	time.sleep(2)	
 	
-	servo_hombro.SetAngle(35)
+	servo_hombro.rotate(70)
 	time.sleep(2)
-	servo_hombro.SetAngle(45)
+	servo_hombro.rotate(100)
 	time.sleep(2)	
-	servo_hombro.SetAngle(60)
+	#servo_hombro.rotate(60)
 	time.sleep(2)		
+	
 
-	servo_codo.SetAngle(15)
+	servo_codo.rotate(15)
 	time.sleep(2)
-	servo_codo.SetAngle(65)
+	servo_codo.rotate(65)
 	time.sleep(2)	
-	servo_codo.SetAngle(45)
+	servo_codo.rotate(45)
 	time.sleep(2)	
-	'''
+
 
 	GPIO.cleanup() 
 
