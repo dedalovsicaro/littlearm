@@ -23,6 +23,12 @@ class Servo:
 		self.__setAngle(angle)
 		self.__prepare_end()	
 
+	def rotate_step(self):
+		self.__prepare()
+		self.angle = self.angle + 5
+		self.__setAngle(self.angle)
+		self.__prepare_end()	
+
 	def __setAngle(self, angle):				
 		print("Hello my name is " + self.name + " setting angle " + str(angle))				
 		duty = float(angle)/180 * 10 + 2
