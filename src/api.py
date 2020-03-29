@@ -6,17 +6,25 @@ import time
 
 import sys
 import os
-#sys.path.insert(0, "/home/pi/Desktop/robotarm/src/robot")
+
 sys.path.insert(0, os.getcwd()+"/robot")    
 from Servo import Servo
 
 name = 'hola'
 servo_base = Servo("Base", 5)
+servo_hombro = Servo("hombro", 3)
+servo_codo = Servo("codo", 7)
+servo_pinza = Servo("pinza", 8)
 servo_base.rotate(5)
+servo_hombro.rotate(70)
+servo_codo.rotate(45)
+servo_pinza.rotate(40)
+time.sleep(1)
+servo_pinza.rotate(85) # cerrado
+
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
-#app.run(host='0.0.0.0')
 
 
 @app.route('/', methods=['GET'])
@@ -29,7 +37,20 @@ def panel():
 
 @app.route('/servo/<servoname>/<angle>')
 def servo(servoname, angle):
-	servo_base.rotate_step()
+	print servoname
+	if (servoname == "base"):
+		servo_base.rotate_step(angle)
+	elif (servoname == "hombro"):
+		servo_hombro.rotate_step(angle)
+	elif (servoname == "codo"):
+		servo_codo.rotate_step(angle)
+	elif (servoname == "pinza"):
+		if (angle == "5"):
+			servo_pinza.rotate(40)
+		else:
+			servo_pinza.rotate(85)
+	else:
+		print "no servo"
 	return 'Hello, World'
 
 app.run(host='0.0.0.0')

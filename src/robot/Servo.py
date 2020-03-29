@@ -23,9 +23,9 @@ class Servo:
 		self.__setAngle(angle)
 		self.__prepare_end()	
 
-	def rotate_step(self):
+	def rotate_step(self, angle):
 		self.__prepare()
-		self.angle = self.angle + 5
+		self.angle = self.angle + int(angle)
 		self.__setAngle(self.angle)
 		self.__prepare_end()	
 
